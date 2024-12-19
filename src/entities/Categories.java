@@ -11,6 +11,12 @@ public class Categories {
 		this.code = code;
 		this.libelle = libelle;
 	}
+	
+	public Categories(int id,String code, String libelle) {
+		this.id =id;
+		this.code = code;
+		this.libelle = libelle;
+	}
 
 	public int getId() {
 		return id;

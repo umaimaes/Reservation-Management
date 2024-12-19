@@ -31,28 +31,6 @@ public class ClientService implements IDAO<Client> {
 	
 	@Override
 	public boolean update(Client o) {
-		String query="update client set nom=?,prenom=?,telephone=?,email=? where id=?";
-		try {
-			PreparedStatement ps = Connexion.getCnx().prepareStatement(query);
-			ps.setString(1,o.getNom());
-			ps.setString(2, o.getPrenom());
-			ps.setString(3, o.getPhone());
-			ps.setString(4, o.getEmail());
-			ps.setInt(5, o.getId());
-			if(ps.executeUpdate()==1) {
-				return true;
-			}else {
-				System.out.println("no");
-			}
-			
-		} catch (SQLException e) {
-			System.out.println("Erreur update SQL");
-		}
-
-		return false;
-	}
-	
-	public boolean updateById(Client o) {
 		String query="update client SET nom=?,prenom=?,telephone=?,email=? where id=?";
 		try {
 			PreparedStatement ps= Connexion.getCnx().prepareStatement(query);
@@ -70,6 +48,7 @@ public class ClientService implements IDAO<Client> {
 		
 		return false;
 	}
+	
 
 	@Override
 	public Client findById(int id) {
@@ -91,7 +70,7 @@ public class ClientService implements IDAO<Client> {
 	} 
 	
 	//fixes
-	@Override
+	/*@Override
 	public List<Client> findByName(String nom) {
 		List<Client> ls=new ArrayList<>();
 		String query="SELECT * from client where nom=?";
@@ -106,7 +85,7 @@ public class ClientService implements IDAO<Client> {
 			System.out.println("erreur de selection par nom"+e);
 		}
 		return null;
-	} 
+	} */
 
 	@Override
 	public List<Client> findAll() {
@@ -126,7 +105,7 @@ public class ClientService implements IDAO<Client> {
 	}
 	
 	@Override
-	public boolean deleteById(Client o) {
+	public boolean delete(Client o) {
 		String query="DELETE FROM client where id=?";
 		try {
 			PreparedStatement ps= Connexion.getCnx().prepareStatement(query);
@@ -140,8 +119,8 @@ public class ClientService implements IDAO<Client> {
 		
 		return false;
 	}
+}
 
 
 
 	
-}
