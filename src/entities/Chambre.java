@@ -11,6 +11,12 @@ public class Chambre {
 		this.phone = phone;
 		this.categories = categories;
 	}
+	
+	public Chambre(int id,String phone,Categories categories) {
+		this.id =id;
+		this.phone = phone;
+		this.categories = categories;
+	}
 
 	public int getId() {
 		return id;
