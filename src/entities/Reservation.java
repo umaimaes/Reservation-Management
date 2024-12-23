@@ -9,8 +9,17 @@ public class Reservation {
 	private Date dateFin;
 	private Client client;
 	private Chambre chambre;
+	
 	public Reservation(Date dateDebut, Date dateFin, Client client, Chambre chambre) {
 		id =++ count;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.client = client;
+		this.chambre = chambre;
+	}
+	
+	public Reservation(int id,Date dateDebut, Date dateFin, Client client, Chambre chambre) {
+		this.id =id;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 		this.client = client;
