@@ -130,7 +130,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
-        ClientForm cf= new ClientForm();
+        ClientForm3 cf= new ClientForm3();
         desktopPane.add(cf);
         cf.setVisible(true);
     }//GEN-LAST:event_openMenuItemActionPerformed
